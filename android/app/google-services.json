@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "314400274150",
+    "project_id": "rhino-spizzeria",
+    "storage_bucket": "rhino-spizzeria.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314400274150:android:c2c55ac8f10d9859b4ed27",
+        "android_client_info": {
+          "package_name": "com.Rhino.RhinoPizzeria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "314400274150-3ru1nfnidn3n1t8riaslsc25b3mshcf4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVaY6WOelzXOtAt83nC0fGFn-3D81gRoA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "314400274150-3ru1nfnidn3n1t8riaslsc25b3mshcf4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
