@@ -12,6 +12,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_downloader/image_downloader.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,29 +40,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-/**
-void pickImage() async {
-  var image = await ImagePicker.pickImage(Source: ImageSource.camera);
-  setState(() {
-
-_image = image
-
-  });
-}
-
-void uploadImage() {
-  FirebaseStorage storage =
-      FirebaseStorage(storageBucket: "gs://rhino-spizzeria.appspot.com");
-  StorageReference ref = storage.ref().child(p.basename(_image.path));
-  StorageUploadTask storageUploadTask = ref.putFile(_image);
-}
-
-
-class FireStorageServises extends ChangeNotifier {
-  FireStorageServises();
-  static Future<dynamic> loadImage(BuildContext context, String Image) async {
-    return await FirebaseStorage.instance.ref().child(Image).getDownloadURL();
-  }
-}**/

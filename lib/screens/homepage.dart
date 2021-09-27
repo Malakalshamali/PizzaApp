@@ -1,9 +1,13 @@
+//import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/widgets.dart';
 import 'dart:ui';
 import 'package:pizza_app1/screens/detailpage.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class HomePage extends StatefulWidget {
   static const String screenRoute = 'HomePage';
@@ -15,6 +19,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final _auth = FirebaseAuth.instance;
+  final _store = FirebaseStorage.instance;
   late User signupUser;
 
   void initState() {
@@ -33,6 +38,17 @@ class _HomePageState extends State<HomePage> {
       print(e);
     }
   }
+
+/*  Future<Widget> _getImage(BuildContext context, String imageName) async {
+    Image image;
+    await FireStorgeService.loadImage(context, imageName).then((value) {
+      image = Image.network(
+        value.toString(),
+        fit: BoxFit.scaleDown,
+      );
+    });
+    return image;
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -330,41 +346,10 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-    
-    
-    
-    
-     /** Scaffold(
-       
-        body: Column(
-          children: [
-            SizedBox(
-              height: 20,
-            ),
-            TextField(
-                decoration: InputDecoration(
-                    hintText: 'Find your favorite pizza',
-                    hintStyle: TextStyle(color: Colors.red[900]),
-                    prefixIcon:
-                        Icon(Icons.search_outlined, color: Colors.red[900]),
-                    filled: true,
-                    fillColor: Colors.white,
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10),
-                    ))),
-                    GridView(
-                      children: [],
 
-
-                    )
-          ],
-            
-        )
-        ,
-        
-        
-        );
+class FireStorgeService extends ChangeNotifier {
+  FireStorgeService();
+  static Future<dynamic> loadImage(BuildContext context, String Image) async {
+    return await FirebaseStorage.instance.ref().child(Image).getDownloadURL();
   }
 }
-**/

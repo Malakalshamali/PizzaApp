@@ -35,6 +35,10 @@ dependencies:
   image_downloader: ^0.30.0
   modal_progress_hud_nsn: ^0.1.0-nullsafety-1
   sliding_up_panel: ^2.0.0+1
+  #google_maps_flutter: ^2.0.10
+
+ 
+  
 
 dev_dependencies:
   
